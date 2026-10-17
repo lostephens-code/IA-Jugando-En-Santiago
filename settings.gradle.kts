@@ -1,20 +1,22 @@
+// =====================================================================
+// settings.gradle.kts
+// ---------------------------------------------------------------------
+// Primer archivo que lee Gradle. Aquí se indica:
+//  1. Dónde buscar los plugins (pluginManagement).
+//  2. Dónde buscar las librerías (dependencyResolutionManagement).
+//  3. Qué módulos forman el proyecto (include).
+// =====================================================================
+
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
+        google()            // Plugins de Android (AGP)
+        mavenCentral()      // Plugins de Kotlin y otros
         gradlePluginPortal()
     }
 }
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
+
 dependencyResolutionManagement {
+    // Obliga a declarar los repositorios solo aquí (buena práctica).
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
@@ -22,5 +24,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JugandoEnSantiago"
+// Nombre del proyecto que verás en Android Studio.
+rootProject.name = "Bars"
+
+// Nuestro único módulo: la aplicación.
 include(":app")
