@@ -56,6 +56,7 @@ dependencies {
 
     // El BOM fija versiones compatibles para todas las librerías de Compose.
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.room.common)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)            // Componentes Material 3 (las barras)

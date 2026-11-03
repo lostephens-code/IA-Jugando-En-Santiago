@@ -10,7 +10,8 @@ agp = "8.13.0"                 # Android Gradle Plugin
 kotlin = "2.2.10"              # Lenguaje Kotlin
 coreKtx = "1.17.0"             # Extensiones Kotlin para Android
 activityCompose = "1.13.0"     # Permite usar Compose dentro de una Activity
-composeBom = "2026.02.01"      # "Lista de materiales": alinea versiones de Compose
+composeBom = "2026.02.01"
+roomCommon = "2.8.5"      # "Lista de materiales": alinea versiones de Compose
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -22,6 +23,7 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-material-icons-core = { group = "androidx.compose.material", name = "material-icons-core" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
