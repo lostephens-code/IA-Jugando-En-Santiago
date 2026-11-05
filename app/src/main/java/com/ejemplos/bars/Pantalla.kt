@@ -13,5 +13,6 @@ enum class Pantalla {
     TOP_APP_BAR,     // Ejemplo de TopAppBar
     CENTER_ALIGNED,  // Ejemplo de CenterAlignedTopAppBar
     MEDIUM,          // Ejemplo de MediumTopAppBar
-    LARGE,           // Ejemplo de LargeTopAppBar
+    LARGE      // Ejemplo de LargeTopAppBar
+
 }

@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.PlayArrow
@@ -55,7 +56,9 @@ import com.ejemplos.bars.ui.theme.ColorTopAppBar
  * @param alElegir función que se llama con la pantalla elegida.
  */
 @Composable
-fun MenuScreen(alElegir: (Pantalla) -> Unit) {
+fun MenuScreen(
+    alElegir: (Pantalla) -> Unit,
+    alCerrarSesion: () -> Unit) {
     // Scaffold es el "esqueleto" de una pantalla Material; aquí solo
     // lo usamos para obtener el color de fondo y los márgenes seguros.
     Scaffold { paddingInterno ->
@@ -124,6 +127,14 @@ fun MenuScreen(alElegir: (Pantalla) -> Unit) {
                     color = ColorLargeTopAppBar,
                     alTocar = { alElegir(Pantalla.LARGE) },
                 )
+                Spacer(Modifier.height(8.dp))
+                OpcionMenu(
+                    nombre = "Cerrar Sesión",
+                    descripcion = "Salir de tu cuenta actual y volver al inicio de sesión.",
+                    icono = Icons.Filled.Close,
+                    color = MaterialTheme.colorScheme.error, // Color rojo de advertencia/salida
+                    alTocar = alCerrarSesion,
+                )
             }
         }
     }
@@ -183,5 +194,5 @@ private fun OpcionMenu(
 @Preview(showBackground = true)
 @Composable
 private fun MenuScreenPreview() {
-    BarsTheme { MenuScreen(alElegir = {}) }
+    BarsTheme { MenuScreen(alElegir = {}, alCerrarSesion = {}) }
 }
